@@ -1,5 +1,5 @@
 name: Contract Bug Report
-description: For reporting vulnerabilities, please follow the https://github.com/lidofinance/core/blob/master/SECURITY.md guide 
+description: For reporting vulnerabilities, please follow the [SECURITY.md](./README.md) guide 
 title: "[Bug]: "
 labels: ["bug", "contracts"]
 body:

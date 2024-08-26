@@ -1,5 +1,5 @@
 name: Contract Bug Report
-description: For reporting vulnerabilities, please follow the [SECURITY.md](./README.md) guide 
+about: For reporting vulnerabilities, please follow the [README.md](./README.md) guide (this is example).
 title: "[Bug]: "
 labels: ["bug", "contracts"]
 body:

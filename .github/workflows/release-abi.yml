@@ -19,6 +19,8 @@ jobs:
         run: zip -j abis.zip abi/*.json
 
       - name: Upload ABIs to release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release view "$GITHUB_REF" || exit;
-          gh release upload "$GITHUB_REF" abis.zip;
+          gh release view "${{ github.ref }}" || exit 1
+          gh release upload "${{ github.ref }}" abis.zip

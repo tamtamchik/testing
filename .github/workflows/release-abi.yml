@@ -1,0 +1,24 @@
+name: Releases
+
+on:
+  release:
+    types: [published] # stable and pre-releases
+
+permissions:
+  contents: write
+
+jobs:
+  release-abis:
+    name: ABIs
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create ABIs archive
+        run: zip -j abis.zip abi/*.json
+
+      - name: Upload ABIs to release
+        run: |
+          gh release view "$GITHUB_REF" || exit;
+          gh release upload "$GITHUB_REF" abis.zip;
